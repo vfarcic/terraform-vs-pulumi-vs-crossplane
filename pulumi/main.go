@@ -69,43 +69,6 @@ func main() {
 
 		ctx.Export("kubeconfig", generateKubeconfig(cluster.Endpoint, cluster.Name, cluster.MasterAuth))
 
-		// k8sProvider, err := providers.NewProvider(ctx, "k8sprovider", &providers.ProviderArgs{
-		// 	Kubeconfig: generateKubeconfig(cluster.Endpoint, cluster.Name, cluster.MasterAuth),
-		// }, pulumi.DependsOn([]pulumi.Resource{cluster}))
-		// if err != nil {
-		// 	return err
-		// }
-
-		// appLabels := pulumi.StringMap{
-		// 	"app": pulumi.String("devops-toolkit"),
-		// }
-		// _, err = appsv1.NewDeployment(ctx, "app-dep", &appsv1.DeploymentArgs{
-		// 	Metadata: &metav1.ObjectMetaArgs{
-		// 		Namespace: pulumi.StringPtr("default"),
-		// 	},
-		// 	Spec: appsv1.DeploymentSpecArgs{
-		// 		Selector: &metav1.LabelSelectorArgs{
-		// 			MatchLabels: appLabels,
-		// 		},
-		// 		Replicas: pulumi.Int(3),
-		// 		Template: &corev1.PodTemplateSpecArgs{
-		// 			Metadata: &metav1.ObjectMetaArgs{
-		// 				Labels: appLabels,
-		// 			},
-		// 			Spec: &corev1.PodSpecArgs{
-		// 				Containers: corev1.ContainerArray{
-		// 					corev1.ContainerArgs{
-		// 						Name:  pulumi.String("devops-toolkit"),
-		// 						Image: pulumi.String("vfarcic/devops-toolkit-series"),
-		// 					}},
-		// 			},
-		// 		},
-		// 	},
-		// }, pulumi.Provider(k8sProvider))
-		// if err != nil {
-		// 	return err
-		// }
-
 		return nil
 	})
 }
