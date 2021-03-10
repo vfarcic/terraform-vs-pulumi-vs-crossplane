@@ -15,12 +15,12 @@ variable "cluster_name" {
 
 variable "min_node_count" {
   type    = number
-  default = 1
+  default = 0
 }
 
 variable "max_node_count" {
   type    = number
-  default = 3
+  default = 0
 }
 
 variable "machine_type" {
@@ -39,7 +39,8 @@ variable "billing_account_id" {
 }
 
 variable "k8s_version" {
-  type = string
+  type    = string
+  default = "1.18.16-gke.500"
 }
 
 variable "ingress_nginx" {

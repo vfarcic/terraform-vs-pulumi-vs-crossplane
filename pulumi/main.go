@@ -9,7 +9,7 @@ import (
 var location = "us-east1"
 var k8sVersion = ""
 var minNodeCount = 1
-var maxNodeCount = 3
+var maxNodeCount = 2
 var preemptible = true
 var machineType = "e2-standard-2"
 

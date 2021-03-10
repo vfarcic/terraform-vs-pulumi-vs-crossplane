@@ -7,5 +7,5 @@ output "region" {
 }
 
 output "project_id" {
-  value = google_project.main.project_id
+  value = var.project_id
 }
