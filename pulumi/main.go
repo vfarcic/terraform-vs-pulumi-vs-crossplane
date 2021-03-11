@@ -32,7 +32,7 @@ func main() {
 			k8sVersion = engineVersions.LatestMasterVersion
 		}
 		cluster, err := container.NewCluster(ctx, "primary", &container.ClusterArgs{
-			Name:                  pulumi.StringPtr("devops-toolkit-pulumi"),
+			Name:                  pulumi.StringPtr("dt-pulumi"),
 			Location:              pulumi.StringPtr(location),
 			MinMasterVersion:      pulumi.StringPtr(k8sVersion),
 			RemoveDefaultNodePool: pulumi.BoolPtr(true),
@@ -43,7 +43,7 @@ func main() {
 		}
 
 		_, err = container.NewNodePool(ctx, "primary_nodes", &container.NodePoolArgs{
-			Name:             pulumi.StringPtr("devops-toolkit-pulumi"),
+			Name:             pulumi.StringPtr("dt-pulumi"),
 			Cluster:          cluster.Name,
 			Location:         pulumi.StringPtr(location),
 			Version:          pulumi.StringPtr(k8sVersion),

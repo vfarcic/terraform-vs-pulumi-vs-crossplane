@@ -1,7 +1,7 @@
 apiVersion: container.gcp.crossplane.io/v1beta1
 kind: GKECluster
 metadata:
-  name: devops-toolkit
+  name: dt-crossplane
 spec:
   forProvider:
     location: us-east1
@@ -12,7 +12,7 @@ spec:
 apiVersion: container.gcp.crossplane.io/v1alpha1
 kind: NodePool
 metadata:
-  name: devops-toolkit
+  name: dt-crossplane
 spec:
   forProvider:
     locations:
@@ -20,7 +20,7 @@ spec:
     - us-east1-c
     - us-east1-d
     clusterRef:
-      name: devops-toolkit
+      name: dt-crossplane
     initialNodeCount: 1
     config:
       preemptible: true

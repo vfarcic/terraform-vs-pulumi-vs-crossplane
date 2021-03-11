@@ -10,7 +10,7 @@ variable "project_id" {
 
 variable "cluster_name" {
   type    = string
-  default = "devops-catalog"
+  default = "dt-terraform"
 }
 
 variable "min_node_count" {
